@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hwuiinn's Portfolio</title>
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/all.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/slick.css" type="text/css">
+    <link rel="stylesheet" href="css/slick_design.css" type="text/css">
+</head>
+<!-- z-index는 감싸는 박스 안에 컨텐츠들의 위계질서를 정해준다.
+                    <div>
+                        <div></div>
+                     </div>
+                    
+                    안에 컨텐츠는 절대 바깥 상자의 위로 컨텐츠가 올라올 수 없음. (z-index X)
+                하지만 
+            <div>
+                        <div></div>
+                        <div></div>
+                     </div> 일때, 안 컨텐츠 기준으로 마지막 상자가 첫 번째 상자의 위로 올라올 수는 있음. (z-index O)-->
+
+<body>
+    <header id="header" class="haeder_shadow">
+        <div class="flex">
+            <div>
+                <a href="#" title="Top"><img src="image/nameLogo.png" alt="로고" title="휘인 포트폴리오 로고"></a>
+            </div>
+            <div class="flex gnb">
+                <a data-target="#sec_web" href="#" title="Web Desing">Web</a>
+                <a data-target="#sec_design" href="#" title="Brand Desing">Brand</a>
+                <a data-target="#sec_banner" href="#" title="Banner Desing">Banner</a>
+            </div>
+            <div class="QR">
+                <img src="image/Kakao-QR(wh).png" alt="1:1 카카오톡 채팅 QR코드" title="1:1 카카오톡 채팅 QR코드">
+            </div>
+        </div>
+    </header>
+
+    <div id="QR_popup">
+        <img src="image/Kakao-QR.png" alt="1:1 카카오톡 채팅 QR코드" title="1:1 카카오톡 채팅 QR코드">
+    </div>
+    <div id="background_wrap"></div>
+
+    <aside id="snb">
+        <div class="object_wrap">
+            <div class="obj light"></div>
+            <div class="obj yellow_light"></div>
+            <div class="obj face"></div>
+            <div class="obj hand"></div>
+        </div>
+    </aside>
+
+    <section id="sec_intro">
+        <div class="flex">
+            <div class="imgBox">
+                <div>
+                    <div class="rotate_box">
+                        <img class="rotate_img" src="image/포트폴리오-애니메이션-로고.png" alt="돌아가는 로고"
+                            title="계속 돌아가는 로고">
+                    </div>
+                    <img src="image/미모티콘.png" alt="휘인 미모티콘" title="휘인 미모티콘">
+                </div>
+            </div>
+            <div class="textBox">
+                <div>
+                    <p>설탕같은 웹 퍼블리셔를 향해 노력하는 사람</p>
+                    <p>박휘인입니다.</p>
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sec_introduce">
+        <div>
+            <div class="X_wrap">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h3>Resume</h3>
+            <input>
+        </div>
+    </section>
+
+    <section id="project">
+
+    </section>
+
+    <section id="sec_web" class="slide_container">
+        <div class="flex title">
+            <h3>Web Design</h3>
+            <div class="emo"></div>
+        </div>
+        <div class="lazy">
+            <div id="slide1">
+                <div class="inner flex">
+                    <div class="bg_img_wrap">
+                        <!-- Background img로 다 사진 들어감 -->
+                        <div class="bg_mac"></div>
+                        <div class="bg_tablet"></div>
+                        <div class="bg_mobile"></div>
+                        <div></div>
+                    </div>
+                    <div class="text_box">
+                        <h4>SIDMOOL</h4>
+                        <div>
+                            <div class="period">
+                                <p>개인 기여도 : 100%</p>
+                                <p>기간 : 22.08 ~ 22.09</p>
+                            </div>
+                        </div>
+                        <p class="explain">천연 성분으로 만든 화장품을 공급하는 시드물 브랜드를 <br> 전체적으로 깔끔하고 천연화장품 브랜드 컨셉으로 리뉴얼 하였습니다.
+                        </p>
+                        <div class="info flex">
+                            <p class="renewal">#Renewal</p>
+                            <p class="responsible">#반응형</p>
+                            <p class="etc">#개인_프로젝트</p>
+                        </div>
+                        <div class="skill flex">
+                            <p class="html">#HTML5</p>
+                            <p class="css">#CSS3</p>
+                            <p class="jquery">#Jquery</p>
+                            <p class="photoshop">#Photoshop</p>
+                            <p class="illustration">#Illustration</p>
+                            <p class="figma">#Figma</p>
+                        </div>
+                        <div class="btn_box flex">
+                            <a class="btn" href="#" title="리뉴얼 시드물 홈페이지로 이동하기" target="_blank">Go homepage</a>
+                            <a class="btn" href="#" title="리뉴얼 시드물 피그마 시안으로 이동하기" target="_blank">Go figma</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 안국약품 -->
+            <div id="slide2">
+                <div class="inner flex">
+                    <div class="bg_img_wrap">
+                        <!-- Background img로 다 사진 들어감 -->
+                        <div class="bg_mac"></div>
+                        <div class="bg_tablet"></div>
+                        <div class="bg_mobile"></div>
+                        <div></div>
+                    </div>
+                    <div class="text_box">
+                        <h4>안국약품</h4>
+                        <div>
+                            <div class="period">
+                                <p>개인 기여도 : 100%</p>
+                                <p>기간 : 22.07 ~ 22.07</p>
+                            </div>
+                        </div>
+                        <p class="explain">제약회사 안국약품의 홈페이지를 하드코딩 하였습니다.</p>
+                        <div class="info flex">
+                            <p class="etc">#Clone_Coding</p>
+                            <p class="responsible">#반응형</p>
+                        </div>
+                        <div class="skill flex">
+                            <p class="html">#HTML5</p>
+                            <p class="css">#CSS3</p>
+                            <p class="jquery">#Jquery</p>
+                        </div>
+                        <div class="btn_box flex">
+                            <a class="btn" href="#" title="하드코딩 안국약품 홈페이지로 이동하기" target="_blank">Go homepage</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 프롬투미 -->
+            <div id="slide3">
+                <div class="inner flex">
+                    <div class="bg_img_wrap">
+                        <!-- Background img로 다 사진 들어감 -->
+                        <div class="bg_mac"></div>
+                        <div class="bg_tablet"></div>
+                        <div class="bg_mobile"></div>
+                        <div></div>
+                    </div>
+                    <div class="text_box">
+                        <h4>Fromtome</h4>
+                        <div>
+                            <div class="period">
+                                <p>개인 기여도 : 100%</p>
+                                <p>기간 : 22.07 ~ 22.08</p>
+                            </div>
+                        </div>
+                        <p class="explain">네이버스토어 쇼핑몰인 Fromtome 홈페이지입니다. <br> Cafe24를 활용하여 만든 고급스럽고 깔끔한 컨셉의 리뉴얼 홈페이지
+                            입니다.</p>
+                        <div class="info flex">
+                            <p class="etc">#Cafe24</p>
+                            <p class="responsible">#적응형</p>
+                        </div>
+                        <div class="skill flex">
+                            <p class="html">#HTML5</p>
+                            <p class="css">#CSS3</p>
+                            <p class="jquery">#Jquery</p>
+                            <p class="photoshop">#Photoshop</p>
+                        </div>
+                        <div class="btn_box flex">
+                            <a class="btn" href="#" title="프롬투미 리뉴얼 홈페이지로 이동하기" target="_blank">Go homepage</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 나투어 -->
+            <div id="slide4">
+                <div class="inner flex">
+                    <div class="bg_img_wrap">
+                        <!-- Background img로 다 사진 들어감 -->
+                        <div class="bg_mac"></div>
+                        <div class="bg_tablet"></div>
+                        <div class="bg_mobile"></div>
+                        <div></div>
+                    </div>
+                    <div class="text_box">
+                        <h4>Natour</h4>
+                        <div>
+                            <div class="period">
+                                <p>개인 기여도 : 100%</p>
+                                <p>기간 : 22.07 ~ 22.07</p>
+                            </div>
+                        </div>
+                        <p class="explain">여행사 Natour의 홈페이지를 하드코딩 하였습니다.</p>
+                        <div class="info flex">
+                            <p class="etc">#Clone-Coding</p>
+                            <p class="responsible">#반응형</p>
+                        </div>
+                        <div class="skill flex">
+                            <p class="html">#HTML5</p>
+                            <p class="css">#CSS3</p>
+                        </div>
+                        <div class="btn_box flex">
+                            <a class="btn" href="#" title="나투어 하드코딩 홈페이지로 이동하기" target="_blank">Go homepage</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 한양 수자인 -->
+            <div id="slide5">
+                <div class="inner flex">
+                    <div class="bg_img_wrap">
+                        <!-- Background img로 다 사진 들어감 -->
+                        <div class="bg_mac"></div>
+                        <div class="bg_tablet"></div>
+                        <div class="bg_mobile"></div>
+                        <div></div>
+                    </div>
+                    <div class="text_box">
+                        <h4>한양 수자인</h4>
+                        <div>
+                            <div class="period">
+                                <p>개인 기여도 : 100%</p>
+                                <p>기간 : 22.06 ~ 22.07</p>
+                            </div>
+                        </div>
+                        <p class="explain">아파트 브랜드 수자인의 홈페이지를 하드코딩 하였습니다.</p>
+                        <div class="info flex">
+                            <p class="etc">#Clone-Coding</p>
+                            <p class="responsible">#적응형</p>
+                        </div>
+                        <div class="skill flex">
+                            <p class="html">#HTML5</p>
+                            <p class="css">#CSS3</p>
+                        </div>
+                        <div class="btn_box flex">
+                            <a class="btn" href="#" title="수자인 하드코딩 홈페이지로 이동하기" target="_blank">Go homepage</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- LG U+ -->
+            <div id="slide6">
+                <div class="inner flex">
+                    <div class="bg_img_wrap">
+                        <!-- Background img로 다 사진 들어감 -->
+                        <div class="bg_mac"></div>
+                        <div class="bg_tablet"></div>
+                        <div class="bg_mobile"></div>
+                        <div></div>
+                    </div>
+                    <div class="text_box">
+                        <h4>LG U+</h4>
+                        <div>
+                            <div class="period">
+                                <p>개인 기여도 : 100%</p>
+                                <p>기간 : 22.06 ~ 22.06</p>
+                            </div>
+                        </div>
+                        <p class="explain">이동통신사 LG U+의 홈페이지를 하드코딩 하였습니다.</p>
+                        <div class="info flex">
+                            <p class="etc">#Clone-Coding</p>
+                            <p class="responsible">#적응형</p>
+                        </div>
+                        <div class="skill flex">
+                            <p class="html">#HTML5</p>
+                            <p class="css">#CSS3</p>
+                        </div>
+                        <div class="btn_box flex">
+                            <a class="btn" href="#" title="LG U+ 하드코딩 홈페이지로 이동하기" target="_blank">Go homepage</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sec_design">
+        <div class="inner">
+            <div class="flex">
+                <h3>Brand Design</h3>
+                <div class="emo"></div>
+            </div>
+            <div>
+                <img src="image/브랜드-디자인_목업-모음사진.jpg" alt="EMO 브랜드 목업 사진" title="EMO 브랜드 목업 사진">
+            </div>
+            <div class="btn_box">
+                <a class="btn" href="#" title="EMO 브랜드 가이드라인 PDF로 이동하기" target="_blank">Go Guideline</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sec_banner" class="fullsection full3" pageNum="4">
+        <div class="inner">
+            <div class="flex">
+                <h3>Banner Design</h3>
+                <div class="emo"></div>
+            </div>
+            <div class="flex">
+                <div class="top">
+                    <img src="image/sns배너.jpg" alt="" title="">
+                    <img src="image/팝업 배너 디자인jpg.jpg" alt="" title="">
+                </div>
+                <div class="bot">
+                    <img src="image/광고배너.jpg" alt="" title="">
+                    <img src="image/소상공인-배너(수정최종)_박휘인.jpg" alt="" title="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer_container">
+        <div class="inner">
+            <h3>Contect</h3>
+            <p>연락을 취하고 싶으시다면, 오른쪽 하단 미모티콘에 마우스를 클릭해주세요!</p>
+        </div>
+    </footer>
+</body>
+
+<!-- <script src="./js/html5.js"></script> -->
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery-migrate-3.0.0.js"></script>
+<script src="js/slick.js"></script>
+<script src="js/app.js"></script>
+<script src="js/slick_custom.js"></script>
+
+</html>

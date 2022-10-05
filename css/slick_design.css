@@ -1,0 +1,60 @@
+.slick-dots {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.slick-dots li {
+    margin: 0 5px;
+}
+
+.slick-dots button {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 0px; /* 웹접근성 때문에.*/
+}
+
+.slick-dots .slick-active button {
+    background-color:#ff7f00;
+    border-color: #ff7f00;
+}
+
+.slick-prev.slick-arrow,
+.slick-next.slick-arrow {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0;
+    width: 42px;
+    height: 42px;
+    border: none;
+    filter: invert(31%) sepia(3%) saturate(1466%) hue-rotate(169deg) brightness(95%) contrast(93%);
+    z-index: 999;
+    transition-duration: .2s;
+}
+
+.slick-prev.slick-arrow:hover,
+.slick-next.slick-arrow:hover {
+    filter: invert(45%) sepia(73%) saturate(1192%) hue-rotate(1deg) brightness(104%) contrast(103%);
+}
+
+.slick-prev.slick-arrow {
+    background-image: url(../image/perv_arrow.png);
+    position: absolute;
+    top: 30%;
+    left: 5%;
+}
+
+.slick-next.slick-arrow {
+    background-image: url(../image/arrow.png);
+    position: absolute;
+    top: 30%;
+    left: 85%;
+}

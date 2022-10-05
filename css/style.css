@@ -1,0 +1,891 @@
+/* 스크롤 시, 특정 영역에서 이미지 투명도가 0.5 -> 1로 바뀌게. */
+/* 미모티콘 누르면 나오는 다른 소개창이 화면 어디서든 뜨게끔. > position:fixed로 해결함.*/
+.mypink {
+    color: #f43172
+}
+
+.myorange {
+    color: #ff7f00;
+}
+
+.myblue {
+    color: #29a5d6;
+}
+
+body {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    color: #333;
+    transition-duration: .2s;
+}
+
+body.fadein {
+    z-index: 99999;
+}
+
+.inner {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+a {
+    cursor: pointer;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+h3 {
+    color: #333;
+    font-size: 62px;
+    padding: 100px 0 50px 0;
+}
+
+.fadein {
+    position: relative;
+    z-index: 9999;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.btn_box a {
+    display: block;
+    margin-right: 30px;
+    background-color: #d9d9d9;
+    color: #333;
+    max-width: 170px;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    line-height: 3;
+    transition-duration: .3s;
+}
+
+.btn:hover {
+    background-color: #4aa8d8;
+    color: #f2f2f2;
+}
+
+/* ------------------------------------@keyframes 시작 */
+@keyframes rotate_img {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes hand {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes yellow_light {
+
+    0%,
+    25%,
+    50%,
+    75%,
+    100% {
+        opacity: 1;
+    }
+
+    12.5%,
+    37.5%,
+    67.5%,
+    87.5% {
+        opacity: 0;
+    }
+}
+
+@keyframes light {
+
+    0%,
+    25%,
+    50%,
+    75%,
+    100% {
+        opacity: 0;
+    }
+
+    12.5%,
+    37.5%,
+    67.5%,
+    87.5% {
+        opacity: 1;
+    }
+}
+
+@keyframes tablet {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes mobile {
+    0% {
+        bottom: -100%;
+    }
+
+    100% {
+        bottom: 0%;
+    }
+}
+
+/* ------------------------------------#header 시작 */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 9999;
+}
+
+#header .flex div:first-child,
+#header .flex div:last-child {
+    padding: 0 30px;
+    cursor: pointer;
+}
+
+/* 로고 이미지 div와 미모티콘 div */
+
+#header .flex div:first-child img {
+    max-width: 170px;
+    width: 100%;
+    position: relative;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+#header .flex.gnb a {
+    display: block;
+    margin: auto 30px;
+    font-size: 28px;
+    font-weight: 300;
+    color: #333;
+
+}
+
+#header .flex.gnb a:hover {
+    color: #4aa8d8;
+}
+
+/* 스크롤 내려간 이후, */
+.haeder_shadow {
+    background-color: #f1f3f5;
+    transition-duration: .3s;
+}
+
+#header.haeder_shadow.active .flex {
+    height: 100%;
+}
+
+#header.haeder_shadow.active {
+    box-shadow: 0 5px 10px #bbb;
+    transform: scale(1.005);
+    background-color: #000;
+    height: 140px;
+}
+
+#header.haeder_shadow.active .flex.gnb a {
+    color: #fff;
+    margin: auto 30px;
+    font-weight: 500;
+    transition-duration: .3s;
+}
+
+#header.haeder_shadow.active .flex.gnb a:hover {
+    color: #29a5d6;
+    transform: rotate(-10deg);
+}
+
+#header .QR {
+    /* position: relative; */
+    max-width: 230px;
+    width: 100%;
+    height: 120px;
+}
+
+#header .QR img {
+    max-width: 80px;
+    width: 100%;
+    position: relative;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* #header .flex div:last-child:hover 했을 때, 문서 전체에 백그라운드가 적용되어야 함. */
+
+#QR_popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+#QR_popup img {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    display: block;
+    margin: 0 auto;
+    transition-duration: .2s;
+}
+
+#QR_popup img.active {
+    width: 90%;
+    height: 90%;
+    opacity: 1;
+}
+
+body #background_wrap.active{
+    width: 100vw;
+    height: 100vh;
+    background: #aaa;
+    opacity: .7;
+    position: fixed;
+    z-index: 999;
+}
+
+
+/* ------------------------------------#snb 시작 */
+
+#snb .object_wrap {
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    width: 180px;
+    height: 180px;
+    z-index: 9;
+    transition-duration: .3s;
+}
+
+#snb .object_wrap:hover {
+    cursor: pointer;
+    background-image: url(../image/click_me.png);
+    background-position: -4% 10%;
+    background-size: 70%;
+    background-repeat: no-repeat;
+}
+
+#snb .object_wrap .obj {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#snb .object_wrap .light {
+    background-image: url(../image/light.png);
+    background-repeat: no-repeat;
+    top: 2%;
+    left: 70%;
+    transform: translateX(-10%);
+    transform: rotate(30deg);
+    width: 32px;
+    height: 47px;
+    animation: light 7s linear infinite;
+}
+
+#snb .object_wrap .yellow_light {
+    background-image: url(../image/yellow_light.png);
+    background-repeat: no-repeat;
+    top: 2%;
+    left: 70%;
+    transform: translateX(-10%);
+    transform: rotate(30deg);
+    width: 32px;
+    height: 47px;
+    animation: yellow_light 7s linear infinite;
+}
+
+#snb .object_wrap .face {
+    background-image: url(../image/face.png);
+    top: 25%;
+    left: 35%;
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 120px;
+}
+
+#snb .object_wrap .hand {
+    background-image: url(../image/hand.png);
+    background-repeat: no-repeat;
+    top: 65%;
+    left: 15%;
+    width: 59px;
+    height: 65px;
+    animation: hand 4s linear infinite;
+}
+
+
+
+/* ------------------------------------#sec_introduce 시작 */
+#sec_introduce {
+    background-color: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 9999;
+    transition-duration: .3s;
+}
+
+#sec_introduce.active {
+    /* position: fixed; */
+    top: 0;
+    right: 0%;
+}
+
+#sec_introduce h3 {
+    color: #f2f2f2;
+    text-align: center;
+}
+
+#sec_introduce .X_wrap {
+    position: fixed;
+    top: 50px;
+    right: -100%;
+    width: 80px;
+    height: 80px;
+    transition-duration: .3s;
+}
+
+#sec_introduce.active .X_wrap {
+    right: 50px;
+}
+
+#sec_introduce .X_wrap span {
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    transform: translate(-20%, -50%);
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #f2f2f2;
+    transition-duration: .2s;
+}
+
+#sec_introduce .X_wrap span:first-child {
+    transform: rotate(45deg);
+    transform-origin: 50%, 50%;
+    transition-duration: .2s;
+}
+
+#sec_introduce .X_wrap span:nth-child(2) {
+    transform: rotate(-45deg);
+    transform-origin: 50%, 50%;
+    transition-duration: .2s;
+}
+
+#sec_introduce .X_wrap span:nth-child(3) {
+    width: 0;
+}
+
+#sec_introduce .X_wrap:hover span { 
+    background-color: red;
+    
+}
+
+#sec_introduce .X_wrap:hover {
+    transform: rotate(360deg);
+}
+
+#sec_introduce .X_wrap:hover span:first-child {
+    transform: rotate(45deg);
+    transform-origin: center right;
+    width: 30px;
+    height: 3px;
+    transition-delay: .2s;
+}
+
+#sec_introduce .X_wrap:hover span:nth-child(2) {
+    transform: rotate(0deg);
+    height: 3px;
+    transition-delay: .2s;
+}
+
+#sec_introduce .X_wrap:hover span:nth-child(3) {
+    transform: rotate(-45deg);
+    transform-origin: center right;
+    width: 30px;
+    height: 3px;
+    transition-delay: .2s;
+}
+
+
+/* ------------------------------------#sec_intro 시작 */
+
+#sec_intro {
+    position: relative;
+    top: 120px;
+    height: 100vh;
+}
+
+#sec_intro .flex {
+    justify-content: space-between;
+    position: relative;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+}
+
+#sec_intro .flex .textBox {
+    width: 50%;
+    margin: auto;
+}
+
+#sec_intro .imgBox {
+    width: 50%;
+}
+
+#sec_intro img {
+    display: block;
+    margin: 0 auto;
+}
+
+#sec_intro p {
+    text-align: center;
+    font-size: 28px;
+    margin-right: 34%;
+}
+
+#sec_intro span:first-child p {
+    padding-bottom: 38.5px;
+}
+
+#sec_intro .flex .imgBox .rotate_img {
+    animation: rotate_img 17s linear infinite;
+    /* transform-origin: 50%, 50%; << 계속 값이 무시되는데, 이유를 모르겠음 */
+    position: absolute;
+    top: -15%;
+    left: 30%;
+    z-index: -1;
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    height: 100%;
+}
+
+/* ------------------------------------#sec_web 시작 */
+#sec_web {
+    position: relative;
+    background-color: #f8f9fa;
+    color: #333;
+    /* height: 100%; */
+    height: 100vh;
+    overflow: hidden;
+}
+
+#sec_web .flex.title {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#sec_web h3 {
+    position: relative;
+    font-size: 62px;
+    margin-left: 100px;
+}
+
+
+
+#sec_web .emo {
+    background-image: url(../image/미모티콘_찡긋.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 110px;
+    height: 120px;
+    margin-left: 30px;
+    position: relative;
+    top: 80px;
+    left: 0%;
+}
+
+#sec_web.bg_green {
+    background-color: green;
+}
+
+/* >>각 테마별로 색상 class JS로 떼었다 붙히기 */
+
+#sec_web .inner.flex {
+    position: relative;
+    flex-wrap: wrap;
+}
+
+#sec_web .bg_img_wrap {
+    width: 54%;
+    height: 100%;
+    position: relative;
+}
+
+#sec_web #slide1 .bg_mac {
+    background-image: url(../image/시드물pc.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 650px;
+    position: relative;
+}
+
+#sec_web #slide1 .bg_tablet {
+    background-image: url(../image/시드물ipad.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    z-index: 2;
+    bottom: -2%;
+    left: 0%;
+    animation: tablet 1s ease-in-out forwards;
+}
+
+#sec_web #slide1 .bg_mobile {
+    background-image: url(../image/시드물iphone.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    bottom: 5%;
+    left: -25%;
+    animation: mobile 1s ease-in-out forwards;
+}
+
+/* #slide1 시드물 이미지 끝 */
+#sec_web #slide2 .bg_mac {
+    background-image: url(../image/안국약품pc.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 650px;
+    position: relative;
+}
+
+#sec_web #slide2 .bg_tablet {
+    background-image: url(../image/안국약품ipad.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    z-index: 2;
+    bottom: -2%;
+    left: 0%;
+    animation: tablet 1s ease-in-out forwards;
+}
+
+#sec_web #slide2 .bg_mobile {
+    background-image: url(../image/안국약품iphone.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    bottom: 5%;
+    left: -25%;
+    animation: mobile 1s ease-in-out forwards;
+}
+
+/* #slide2 안국약품 이미지 끝 */
+#sec_web #slide3 .bg_mac {
+    background-image: url(../image/프롬투미pc.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 650px;
+    position: relative;
+}
+
+/* slide3 프롬투미 이미지 끝 */
+#sec_web #slide4 .bg_mac {
+    background-image: url(../image/나투어pc.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 650px;
+    position: relative;
+}
+
+#sec_web #slide4 .bg_tablet {
+    background-image: url(../image/나투어ipad.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    z-index: 2;
+    bottom: -2%;
+    left: 0%;
+    animation: tablet 1s ease-in-out forwards;
+}
+
+#sec_web #slide4 .bg_mobile {
+    background-image: url(../image/나투어iphone.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    bottom: 5%;
+    left: -25%;
+    animation: mobile 1s ease-in-out forwards;
+}
+
+/* slide4 나투어 이미지 끝 */
+#sec_web #slide5 .bg_mac {
+    background-image: url(../image/한양수자인pc.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 650px;
+    position: relative;
+}
+
+/* slide5 한양 수자인 이미지 끝 */
+#sec_web #slide6 .bg_mac {
+    background-image: url(../image/LGU+pc.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 650px;
+    position: relative;
+}
+
+/* slide6 LG U+ 이미지 끝 */
+
+#sec_web .text_box {
+    width: 43%;
+}
+
+#sec_web .text_box h4 {
+    position: relative;
+    top: 0;
+    left: 0;
+    color: #333;
+    font-size: 48px;
+    padding-top: 5px;
+    padding-bottom: 25px;
+}
+
+#sec_web .text_box h4::before {
+    position: absolute;
+    top: -80%;
+    right: 43%;
+    z-index: -1;
+    font-size: 16rem;
+    color: #dee2e6;
+    opacity: .8;
+}
+
+#sec_web::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    width: 800px;
+    height: 800px;
+    border: 6px solid green;
+    background-color: green;
+    opacity: .7;
+    filter: blur(10px);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+#sec_web #slide1 .text_box h4::before {
+    content: '1';
+}
+
+#sec_web #slide2 .text_box h4::before {
+    content: '2';
+}
+
+#sec_web #slide3 .text_box h4::before {
+    content: '3';
+}
+
+#sec_web #slide4 .text_box h4::before {
+    content: '4';
+}
+
+#sec_web #slide5 .text_box h4::before {
+    content: '5';
+}
+
+#sec_web #slide6 .text_box h4::before {
+    content: '6';
+}
+
+#sec_web .period {
+    margin-bottom: 25px;
+}
+
+#sec_web .explain {
+    margin-bottom: 30px;
+}
+
+#sec_web .text_box .skill.flex {
+    margin-bottom: 45px;
+}
+
+#sec_web .text_box .info.flex,
+#sec_web .text_box .skill.flex {
+    justify-content: flex-start;
+}
+
+#sec_web .text_box .info.flex p,
+#sec_web .text_box .skill.flex p {
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+#sec_web .text_box .btn_box.flex {
+    justify-content: flex-start;
+}
+
+/* ------------------------------------#sec_design 시작 */
+#sec_design {
+    height: 100vh;
+    background-color: #f1f3f5;
+}
+
+#sec_design .inner > .flex {
+    justify-content: flex-start;
+}
+
+#sec_design .emo {
+    background-image: url(../image/emo.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+    margin-left: 30px;
+    position: relative;
+    top: 80px;
+    left: 0%;
+}
+
+#sec_design img {
+    max-width: 1440px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+#sec_design .btn_box a {
+    margin: 0 auto;
+    margin-bottom: 200px;
+}
+
+/* ------------------------------------#sec_banner 시작 */
+
+#sec_banner {
+    background-color: #e9ecef;
+    padding-bottom: 100px
+}
+
+#sec_banner .inner > .flex {
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+#sec_banner .emo {
+    background-image: url(../image/ad.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 80px;
+    height: 80px;
+    margin-left: 30px;
+    position: relative;
+    top: 110px;
+    left: 0%;
+}
+
+#sec_banner .inner .flex:nth-of-type(2) {
+    flex-direction: column;
+}
+
+#sec_banner img {
+    max-width: 1440px;
+    width: 100%;
+}
+
+#sec_banner .flex .top {
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: justify;
+    /* text-align : justify >> 양쪽 정렬*/
+}
+
+#sec_banner .flex .top:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 0;
+}
+
+/* #sec_banner .flex .top / #sec_banner .flex .top:after 얘네 속성이 각 상자를 flex가 아닌 text-align으로 양쪽 정렬 진행한 것.*/
+
+#sec_banner .flex .top img {
+    width: 48%;
+    /* max-width: 475px; */
+    max-height: 1080px;
+    display: inline-block;
+}
+
+#sec_banner .flex .bot img:first-child {
+    width: 31%;
+    max-height: 362px;
+}
+
+#sec_banner .flex .bot img:nth-child(2) {
+    width: 68%;
+}
+
+/* ------------------------------------#footer 시작 */
+#footer_container {
+    background-color: #dee2e6;
+    padding-bottom: 100px;
+}
+
+#footer_container p {
+    text-align: center;
+    font-size: 28px;
+}
