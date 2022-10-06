@@ -32,8 +32,8 @@
     background-repeat: no-repeat;
     background-size: contain;
     font-size: 0;
-    width: 42px;
-    height: 42px;
+    width: 32px;
+    height: 32px;
     border: none;
     filter: invert(31%) sepia(3%) saturate(1466%) hue-rotate(169deg) brightness(95%) contrast(93%);
     z-index: 999;
@@ -48,13 +48,13 @@
 .slick-prev.slick-arrow {
     background-image: url(../image/perv_arrow.png);
     position: absolute;
-    top: 30%;
-    left: 5%;
+    bottom: 20%;
+    left: 46.5%;
 }
 
 .slick-next.slick-arrow {
     background-image: url(../image/arrow.png);
     position: absolute;
-    top: 30%;
-    left: 85%;
+    bottom: 20%;
+    left: 51.5%;
 }

@@ -165,7 +165,7 @@ h3 {
     top: 0;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 100px;
     z-index: 9999;
 }
 
@@ -178,7 +178,7 @@ h3 {
 /* 로고 이미지 div와 미모티콘 div */
 
 #header .flex div:first-child img {
-    max-width: 170px;
+    max-width: 130px;
     width: 100%;
     position: relative;
     top: 50%;
@@ -189,10 +189,9 @@ h3 {
 #header .flex.gnb a {
     display: block;
     margin: auto 30px;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 300;
     color: #333;
-
 }
 
 #header .flex.gnb a:hover {
@@ -213,7 +212,7 @@ h3 {
     box-shadow: 0 5px 10px #bbb;
     transform: scale(1.005);
     background-color: #000;
-    height: 140px;
+    height: 110px;
 }
 
 #header.haeder_shadow.active .flex.gnb a {
@@ -232,16 +231,16 @@ h3 {
     /* position: relative; */
     max-width: 230px;
     width: 100%;
-    height: 120px;
+    height: 100px;
 }
 
 #header .QR img {
-    max-width: 80px;
+    max-width: 60px;
     width: 100%;
     position: relative;
-    top: 55%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
 }
 
 /* #header .flex div:last-child:hover 했을 때, 문서 전체에 백그라운드가 적용되어야 함. */
@@ -478,8 +477,14 @@ body #background_wrap.active{
 
 #sec_intro p {
     text-align: center;
-    font-size: 28px;
+    font-size: 22px;
+    font-weight: 300;
     margin-right: 34%;
+}
+
+#sec_intro p strong {
+    text-align: center;
+    font-size: 26px;
 }
 
 #sec_intro span:first-child p {
@@ -488,13 +493,12 @@ body #background_wrap.active{
 
 #sec_intro .flex .imgBox .rotate_img {
     animation: rotate_img 17s linear infinite;
-    /* transform-origin: 50%, 50%; << 계속 값이 무시되는데, 이유를 모르겠음 */
     position: absolute;
-    top: -15%;
-    left: 30%;
+    top: -8%;
+    left: 37%;
     z-index: -1;
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 200px;
+    max-height: 200px;
     width: 100%;
     height: 100%;
 }
@@ -504,8 +508,7 @@ body #background_wrap.active{
     position: relative;
     background-color: #f8f9fa;
     color: #333;
-    /* height: 100%; */
-    height: 100vh;
+    /* height: 100vh; */
     overflow: hidden;
 }
 
@@ -520,9 +523,7 @@ body #background_wrap.active{
     margin-left: 100px;
 }
 
-
-
-#sec_web .emo {
+/* #sec_web .emo {
     background-image: url(../image/미모티콘_찡긋.png);
     background-position: center center;
     background-repeat: no-repeat;
@@ -533,7 +534,7 @@ body #background_wrap.active{
     position: relative;
     top: 80px;
     left: 0%;
-}
+} */
 
 #sec_web.bg_green {
     background-color: green;
@@ -553,7 +554,7 @@ body #background_wrap.active{
 }
 
 #sec_web #slide1 .bg_mac {
-    background-image: url(../image/시드물pc.png);
+    background-image: url(../image/Sid_pc.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 100%;
@@ -562,33 +563,37 @@ body #background_wrap.active{
 }
 
 #sec_web #slide1 .bg_tablet {
-    background-image: url(../image/시드물ipad.png);
+    background-image: url(../image/Sid_ipad.png);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 350px;
-    height: 350px;
+    max-width: 350px;
+    max-height: 350px;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    z-index: 2;
-    bottom: -2%;
-    left: 0%;
+    z-index: 0;
+    bottom: 9%;
+    left: 18.5%;
     animation: tablet 1s ease-in-out forwards;
 }
 
 #sec_web #slide1 .bg_mobile {
-    background-image: url(../image/시드물iphone.png);
+    background-image: url(../image/Sid_iphone.png);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 350px;
-    height: 350px;
+    max-width: 350px;
+    max-height: 350px;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    bottom: 5%;
-    left: -25%;
+    top: 34%;
+    left: -12%;
     animation: mobile 1s ease-in-out forwards;
 }
 
 /* #slide1 시드물 이미지 끝 */
 #sec_web #slide2 .bg_mac {
-    background-image: url(../image/안국약품pc.png);
+    background-image: url(../image/Ahn_pc.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 100%;
@@ -597,33 +602,37 @@ body #background_wrap.active{
 }
 
 #sec_web #slide2 .bg_tablet {
-    background-image: url(../image/안국약품ipad.png);
+    background-image: url(../image/Ahn_ipad.png);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 350px;
-    height: 350px;
+    max-width: 350px;
+    max-height: 350px;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    z-index: 2;
-    bottom: -2%;
-    left: 0%;
+    z-index: 0;
+    bottom: 9%;
+    left: 18.5%;
     animation: tablet 1s ease-in-out forwards;
 }
 
 #sec_web #slide2 .bg_mobile {
-    background-image: url(../image/안국약품iphone.png);
+    background-image: url(../image/Ahn_iphone.png);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 350px;
-    height: 350px;
+    max-width: 350px;
+    max-height: 350px;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    bottom: 5%;
-    left: -25%;
+    top: 34%;
+    left: -12%;
     animation: mobile 1s ease-in-out forwards;
 }
 
 /* #slide2 안국약품 이미지 끝 */
 #sec_web #slide3 .bg_mac {
-    background-image: url(../image/프롬투미pc.png);
+    background-image: url(../image/From_pc.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 100%;
@@ -633,7 +642,7 @@ body #background_wrap.active{
 
 /* slide3 프롬투미 이미지 끝 */
 #sec_web #slide4 .bg_mac {
-    background-image: url(../image/나투어pc.png);
+    background-image: url(../image/Natour_pc.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 100%;
@@ -642,33 +651,37 @@ body #background_wrap.active{
 }
 
 #sec_web #slide4 .bg_tablet {
-    background-image: url(../image/나투어ipad.png);
+    background-image: url(../image/Natour_ipad.png);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 350px;
-    height: 350px;
+    max-width: 350px;
+    max-height: 350px;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    z-index: 2;
-    bottom: -2%;
-    left: 0%;
+    z-index: 0;
+    bottom: 9%;
+    left: 18.5%;
     animation: tablet 1s ease-in-out forwards;
 }
 
 #sec_web #slide4 .bg_mobile {
-    background-image: url(../image/나투어iphone.png);
+    background-image: url(../image/Natour_iphone.png);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 350px;
-    height: 350px;
+    max-width: 350px;
+    max-height: 350px;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    bottom: 5%;
-    left: -25%;
+    top: 34%;
+    left: -12%;
     animation: mobile 1s ease-in-out forwards;
 }
 
 /* slide4 나투어 이미지 끝 */
 #sec_web #slide5 .bg_mac {
-    background-image: url(../image/한양수자인pc.png);
+    background-image: url(../image/Hanyang_pc.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 100%;
