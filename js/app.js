@@ -43,6 +43,11 @@ $(function () {
       $("body #background_wrap").removeClass("active");
     });
 
+    //#project .flex .card_wrap:first-child:hover되면, #sidmool에 .on 붙히기
+    $('#project .flex .card_wrap:first-child').hover(
+      function(){ $('#sidmool').addClass('on') },
+      function(){ $('#sidmool').removeClass('on') }
+      )
 
   //offset이 #sec_web에 들어오면, 키프레임 애니메이션 실행시키기
 

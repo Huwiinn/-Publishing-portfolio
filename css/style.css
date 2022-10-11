@@ -209,7 +209,7 @@ h3 {
 #header.haeder_shadow.active {
     box-shadow: 0 5px 10px #bbb;
     transform: scale(1.005);
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     height: 110px;
 }
 
@@ -266,7 +266,7 @@ h3 {
     opacity: 1;
 }
 
-body #background_wrap.active{
+body #background_wrap.active {
     width: 100vw;
     height: 100vh;
     background: #aaa;
@@ -349,7 +349,7 @@ body #background_wrap.active{
 
 /* ------------------------------------#sec_introduce 시작 */
 #sec_introduce {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -411,9 +411,9 @@ body #background_wrap.active{
     width: 0;
 }
 
-#sec_introduce .X_wrap:hover span { 
+#sec_introduce .X_wrap:hover span {
     background-color: red;
-    
+
 }
 
 #sec_introduce .X_wrap:hover {
@@ -459,6 +459,8 @@ body #background_wrap.active{
     transform: translate(-50%, -25%);
 }
 
+/* ------------------------------------#project 시작 */
+
 #project .flex.title {
     flex-direction: row;
     justify-content: flex-start;
@@ -472,13 +474,19 @@ body #background_wrap.active{
 
 #project .inner.flex {
     position: relative;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
     flex-wrap: nowrap;
 }
 
 #project .bg_img_wrap {
-    width: 54%;
+    width: 50%;
     height: 100%;
     position: relative;
+    left: 52%;
+    transform: translateX(-50%);
+    margin: 0 auto;
 }
 
 #sec_intro .flex .textBox {
@@ -528,7 +536,6 @@ body #background_wrap.active{
     position: relative;
     background-color: #f8f9fa;
     color: #333;
-    /* overflow: hidden; */
 }
 
 #project .flex .card_wrap {
@@ -545,7 +552,7 @@ body #background_wrap.active{
 }
 
 /* #project에서 a태그 공통 속성 */
-#project .card_wrap a{
+#project .card_wrap a {
     position: absolute;
     z-index: 1;
     display: block;
@@ -556,32 +563,37 @@ body #background_wrap.active{
     transition-duration: .5s;
     opacity: 0;
 }
-#project .card_wrap:nth-of-type(2) a{
+
+#project .card_wrap:nth-of-type(2) a {
     color: #000;
 }
 
 /* .card_wrap에 hover시 a태그 효과 */
 #project .card_wrap a:hover {
-    background:#29a5d6;
+    background: #29a5d6;
 }
+
 #project .card_wrap:hover a {
     opacity: 1;
 }
+
 #project .card_wrap a:nth-of-type(1) {
     bottom: 40.5%;
     left: 57%;
 }
+
 #project .card_wrap a:nth-of-type(2) {
     bottom: 30.5%;
     left: 57%;
 }
+
 #project .card_wrap:nth-of-type(2) a:hover {
-    background:#000;
-    color:#fff;
+    background: #000;
+    color: #fff;
 }
 
 /* 화살표 애니메이션 */
-#project .flex .card_wrap .arrow{
+#project .flex .card_wrap .arrow {
     position: absolute;
     bottom: 40%;
     left: 35%;
@@ -589,8 +601,10 @@ body #background_wrap.active{
     width: 60px;
     height: 60px;
     margin: auto;
+    z-index: 1;
 }
-#project .flex .card_wrap .arrow2{
+
+#project .flex .card_wrap .arrow2 {
     position: absolute;
     bottom: 30%;
     left: 35%;
@@ -598,8 +612,10 @@ body #background_wrap.active{
     width: 60px;
     height: 60px;
     margin: auto;
+    z-index: 1;
 }
-#project .flex .card_wrap .arrow span::after{
+
+#project .flex .card_wrap .arrow span::after {
     content: '';
     width: 0px;
     height: 5px;
@@ -611,7 +627,8 @@ body #background_wrap.active{
     border-radius: 10px;
     transition-duration: .5s;
 }
-#project .flex .card_wrap .arrow2 span::after{
+
+#project .flex .card_wrap .arrow2 span::after {
     content: '';
     width: 0px;
     height: 5px;
@@ -623,38 +640,46 @@ body #background_wrap.active{
     border-radius: 10px;
     transition-duration: .5s;
 }
+
 #project .flex .card_wrap:nth-child(2) .arrow span::after {
     background-color: #000;
 }
+
 #project .flex .card_wrap:nth-child(2) .arrow2 span::after {
     background-color: #000;
 }
-#project .flex .card_wrap .arrow span:nth-child(1)::after{
+
+#project .flex .card_wrap .arrow span:nth-child(1)::after {
     position: absolute;
     top: 0%;
     left: 0;
 }
-#project .flex .card_wrap .arrow2 span:nth-child(1)::after{
+
+#project .flex .card_wrap .arrow2 span:nth-child(1)::after {
     position: absolute;
     top: 0%;
     left: 0;
 }
-#project .flex .card_wrap .arrow span:nth-child(2)::after{
+
+#project .flex .card_wrap .arrow span:nth-child(2)::after {
     position: absolute;
-    top :0;
+    top: 0;
     left: 0;
 }
-#project .flex .card_wrap .arrow2 span:nth-child(2)::after{
+
+#project .flex .card_wrap .arrow2 span:nth-child(2)::after {
     position: absolute;
-    top :0;
+    top: 0;
     left: 0;
 }
-#project .flex .card_wrap .arrow span:nth-child(3)::after{
+
+#project .flex .card_wrap .arrow span:nth-child(3)::after {
     position: absolute;
     top: 0%;
     left: 0;
 }
-#project .flex .card_wrap .arrow2 span:nth-child(3)::after{
+
+#project .flex .card_wrap .arrow2 span:nth-child(3)::after {
     position: absolute;
     top: 0%;
     left: 0;
@@ -667,38 +692,44 @@ body #background_wrap.active{
     left: 65%;
     width: 18px;
 }
+
 #project .flex .card_wrap:hover .arrow2 span:nth-child(1)::after {
     transform: rotate(405deg);
     top: 41%;
     left: 65%;
     width: 18px;
 }
+
 #project .flex .card_wrap:hover .arrow span:nth-child(2)::after {
     transform: rotate(360deg);
     top: 50%;
     left: 20%;
     width: 42px;
 }
+
 #project .flex .card_wrap:hover .arrow2 span:nth-child(2)::after {
     transform: rotate(360deg);
     top: 50%;
     left: 20%;
     width: 42px;
 }
+
 #project .flex .card_wrap:hover .arrow span:nth-child(3)::after {
     transform: rotate(-405deg);
     top: 59%;
     left: 65%;
     width: 18px;
 }
+
 #project .flex .card_wrap:hover .arrow2 span:nth-child(3)::after {
     transform: rotate(-405deg);
     top: 59%;
     left: 65%;
     width: 18px;
 }
+
 /* 시드물 인트로 */
-#project .flex .card_wrap:first-child .img_box{
+#project .flex .card_wrap:first-child .img_box {
     position: absolute;
     top: 0;
     left: 0;
@@ -709,22 +740,28 @@ body #background_wrap.active{
     background-repeat: no-repeat;
     background-size: cover;
     transition-duration: .5s;
+    z-index: 1;
 }
+
 #project .flex .card_wrap:first-child p {
     color: #fff;
     position: absolute;
-    top: 50%;
+    top: 48%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     font-size: 2.625rem;
     font-family: 'Bing';
     opacity: 0;
     transition-duration: .5s;
+    z-index: 1;
+    margin-bottom: 20px;
 }
-#project .flex .card_wrap:first-child:hover .img_box{
+
+#project .flex .card_wrap:first-child:hover .img_box {
     transform: scale(1.02);
     filter: blur(3px);
 }
+
 #project .flex .card_wrap:first-child:hover p {
     opacity: 1;
 }
@@ -733,7 +770,8 @@ body #background_wrap.active{
     position: relative;
     overflow: hidden;
 }
-#project .flex .card_wrap:nth-child(2) .img_box{
+
+#project .flex .card_wrap:nth-child(2) .img_box {
     position: absolute;
     top: 0;
     left: 0;
@@ -745,21 +783,24 @@ body #background_wrap.active{
     background-size: cover;
     transition-duration: .5s;
 }
+
 #project .flex .card_wrap:nth-child(2) p {
     color: #000;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     font-size: 2.625rem;
     font-family: 'Bing';
     opacity: 0;
     transition-duration: .5s;
 }
-#project .flex .card_wrap:nth-child(2):hover .img_box{
+
+#project .flex .card_wrap:nth-child(2):hover .img_box {
     transform: scale(1.02);
     filter: blur(3px);
 }
+
 #project .flex .card_wrap:nth-child(2):hover p {
     opacity: 1;
 }
@@ -769,17 +810,38 @@ body #background_wrap.active{
 }
 
 
-/* 시드물 상세 페이지 */
-#project #sidemool .bg_mac {
+/* 인트로 :hover시에 나오는 시드물 상세 페이지 */
+#project #sidmool {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    top: -980px;
+    left: -100%;
+    z-index: 0;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+}
+
+#project #sidmool.on {
+    background: rgba(0, 0, 0, 0.7);
+    top: -976px;
+    left: 0%;
+}
+
+#project #sidmool>.flex {
+    flex-direction: column;
+}
+
+#project #sidmool .bg_mac {
     background-image: url(../image/Sid_pc.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 100%;
-    height: 650px;
+    height: 500px;
     position: relative;
 }
 
-#project #sidemool .bg_tablet {
+#project #sidmool .bg_tablet {
     background-image: url(../image/Sid_ipad.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -789,12 +851,12 @@ body #background_wrap.active{
     height: 100%;
     position: absolute;
     z-index: 0;
-    bottom: 9%;
-    left: 18.5%;
+    bottom: -7%;
+    left: 9%;
     animation: tablet 1s ease-in-out forwards;
 }
 
-#project #sidemool .bg_mobile {
+#project #sidmool .bg_mobile {
     background-image: url(../image/Sid_iphone.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -804,9 +866,10 @@ body #background_wrap.active{
     height: 100%;
     position: absolute;
     top: 34%;
-    left: -12%;
+    left: -22%;
     animation: mobile 1s ease-in-out forwards;
 }
+
 /* 시드물 이미지 끝 */
 
 #project #fromtome .bg_mac {
@@ -817,16 +880,19 @@ body #background_wrap.active{
     height: 650px;
     position: relative;
 }
+
 /* 프롬투미 이미지 끝 */
 
 #project .text_box h4 {
     position: relative;
     top: 0;
     left: 0;
-    color: #333;
+    color: #f2f2f2;
     font-size: 48px;
     padding-top: 5px;
-    padding-bottom: 25px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-family: "Bing";
 }
 
 #project .text_box h4::before {
@@ -839,35 +905,59 @@ body #background_wrap.active{
     opacity: .8;
 }
 
-/* #Project #sidmool .text_box .period,
-#Project #fromtome .text_box .period {
+#project #sidmool .text_box {
+    position: relative;
+    top: 0;
+    left: 75%;
+    transform: translateX(-50%);
+    color: #f2f2f2;
+}
+
+#project #sidmool .text_box .period,
+#project #fromtome .text_box .period {
     margin-bottom: 25px;
+    text-align: center;
 }
 
-#Project #sidmool .text_box .explain,
-#Project #fromtome .text_box .explain {
-    margin-bottom: 30px;
+#project #sidmool .text_box .period p,
+#project #fromtome .text_box .period p {
+    font-size: 12px;
 }
 
-#Project #sidmool .text_box .skill.flex,
-#Project #fromtome .text_box .skill.flex {
-    margin-bottom: 45px;
+#project #sidmool .text_box .explain,
+#project #fromtome .text_box .explain {
+    text-align: center;
+    margin-bottom: 20px;
 }
-
-#Project .text_box .info.flex,
-#Project .text_box .skill.flex {
-    justify-content: flex-start;
-}
-
-#Project .text_box .info.flex p,
-#Project .text_box .skill.flex p {
-    margin-right: 15px;
+#project #sidmool .text_box .explain,
+#project #fromtome .text_box .explain {
     font-size: 16px;
 }
 
-#Project .text_box .btn_box.flex {
+#project #sidmool .text_box .skill.flex,
+#project #fromtome .text_box .skill.flex {
+    margin-bottom: 45px;
+}
+#project #sidmool .text_box .skill.flex p,
+#project #fromtome .text_box .skill.flex p {
+    font-size: 12px;
+}
+
+#project .text_box .info.flex,
+#project .text_box .skill.flex {
+    text-align: center;
+    justify-content: center;
+}
+
+#project .text_box .info.flex p,
+#project .text_box .skill.flex p {
+    margin-right: 15px;
+    font-size: 12px;
+}
+
+#project .text_box .btn_box.flex {
     justify-content: flex-start;
-} */
+}
 
 /* ------------------------------------#sec_web 시작 */
 #sec_web {
@@ -916,6 +1006,7 @@ body #background_wrap.active{
     height: 500px;
     position: relative;
 }
+
 /* #slide2 안국약품 이미지 끝 */
 
 #sec_web #slide4 .bg_mac {
@@ -926,6 +1017,7 @@ body #background_wrap.active{
     height: 500px;
     position: relative;
 }
+
 /* slide4 나투어 이미지 끝 */
 
 #sec_web #slide5 .bg_mac {
@@ -937,6 +1029,7 @@ body #background_wrap.active{
     height: 500px;
     position: relative;
 }
+
 /* slide5 한양 수자인 이미지 끝 */
 
 #sec_web #slide6 .bg_mac {
@@ -1014,9 +1107,11 @@ body #background_wrap.active{
 #sec_web .text_box {
     width: 35%;
 }
+
 #sec_web .text_box .skill.flex {
     margin-bottom: 45px;
 }
+
 #sec_web .text_box .info.flex,
 #sec_web .text_box .skill.flex {
     justify-content: flex-start;
@@ -1039,12 +1134,12 @@ body #background_wrap.active{
     background-color: #f1f3f5;
 }
 
-#sec_design h6 + p {
+#sec_design h6+p {
     font-size: .875rem;
     margin-bottom: 10px;
 }
 
-#sec_design .inner > .flex {
+#sec_design .inner>.flex {
     justify-content: flex-start;
 }
 
@@ -1078,7 +1173,7 @@ body #background_wrap.active{
     padding-bottom: 100px
 }
 
-#sec_banner .inner > .flex {
+#sec_banner .inner>.flex {
     justify-content: flex-start;
     flex-direction: row;
 }
