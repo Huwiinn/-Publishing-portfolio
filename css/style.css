@@ -209,7 +209,7 @@ h3 {
 #header.haeder_shadow.active {
     box-shadow: 0 5px 10px #bbb;
     transform: scale(1.005);
-    background-color: #000;
+    background: rgba(0,0,0,0.8);
     height: 110px;
 }
 
@@ -536,18 +536,65 @@ body #background_wrap.active{
     max-height: 100%;
     width: 2000px;
     height: 100vh;
+    position: relative;
 }
 
 #project .flex .card_wrap:first-child {
     position: relative;
     overflow: hidden;
 }
+
+/* #project에서 a태그 공통 속성 */
+#project .card_wrap a{
+    position: absolute;
+    z-index: 1;
+    display: block;
+    transform: translateX(-50%);
+    color: #fff;
+    background: none;
+    padding: 5px 10px;
+    transition-duration: .5s;
+    opacity: 0;
+}
+#project .card_wrap:nth-of-type(2) a{
+    color: #000;
+}
+
+/* .card_wrap에 hover시 a태그 효과 */
+#project .card_wrap a:hover {
+    background:#29a5d6;
+}
+#project .card_wrap:hover a {
+    opacity: 1;
+}
+#project .card_wrap a:nth-of-type(1) {
+    bottom: 40.5%;
+    left: 57%;
+}
+#project .card_wrap a:nth-of-type(2) {
+    bottom: 30.5%;
+    left: 57%;
+}
+#project .card_wrap:nth-of-type(2) a:hover {
+    background:#000;
+    color:#fff;
+}
+
 /* 화살표 애니메이션 */
 #project .flex .card_wrap .arrow{
     position: absolute;
     bottom: 40%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 35%;
+    transform: translateX(-35%);
+    width: 60px;
+    height: 60px;
+    margin: auto;
+}
+#project .flex .card_wrap .arrow2{
+    position: absolute;
+    bottom: 30%;
+    left: 35%;
+    transform: translateX(-35%);
     width: 60px;
     height: 60px;
     margin: auto;
@@ -564,10 +611,30 @@ body #background_wrap.active{
     border-radius: 10px;
     transition-duration: .5s;
 }
+#project .flex .card_wrap .arrow2 span::after{
+    content: '';
+    width: 0px;
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition-duration: .5s;
+}
 #project .flex .card_wrap:nth-child(2) .arrow span::after {
     background-color: #000;
 }
+#project .flex .card_wrap:nth-child(2) .arrow2 span::after {
+    background-color: #000;
+}
 #project .flex .card_wrap .arrow span:nth-child(1)::after{
+    position: absolute;
+    top: 0%;
+    left: 0;
+}
+#project .flex .card_wrap .arrow2 span:nth-child(1)::after{
     position: absolute;
     top: 0%;
     left: 0;
@@ -577,13 +644,30 @@ body #background_wrap.active{
     top :0;
     left: 0;
 }
+#project .flex .card_wrap .arrow2 span:nth-child(2)::after{
+    position: absolute;
+    top :0;
+    left: 0;
+}
 #project .flex .card_wrap .arrow span:nth-child(3)::after{
     position: absolute;
     top: 0%;
     left: 0;
 }
+#project .flex .card_wrap .arrow2 span:nth-child(3)::after{
+    position: absolute;
+    top: 0%;
+    left: 0;
+}
+
 /* arrow hover시, 효과 */
 #project .flex .card_wrap:hover .arrow span:nth-child(1)::after {
+    transform: rotate(405deg);
+    top: 41%;
+    left: 65%;
+    width: 18px;
+}
+#project .flex .card_wrap:hover .arrow2 span:nth-child(1)::after {
     transform: rotate(405deg);
     top: 41%;
     left: 65%;
@@ -595,13 +679,24 @@ body #background_wrap.active{
     left: 20%;
     width: 42px;
 }
+#project .flex .card_wrap:hover .arrow2 span:nth-child(2)::after {
+    transform: rotate(360deg);
+    top: 50%;
+    left: 20%;
+    width: 42px;
+}
 #project .flex .card_wrap:hover .arrow span:nth-child(3)::after {
     transform: rotate(-405deg);
     top: 59%;
     left: 65%;
     width: 18px;
 }
-
+#project .flex .card_wrap:hover .arrow2 span:nth-child(3)::after {
+    transform: rotate(-405deg);
+    top: 59%;
+    left: 65%;
+    width: 18px;
+}
 /* 시드물 인트로 */
 #project .flex .card_wrap:first-child .img_box{
     position: absolute;
@@ -806,115 +901,55 @@ body #background_wrap.active{
 }
 
 #sec_web .bg_img_wrap {
-    width: 54%;
+    width: 100%;
     height: 100%;
     position: relative;
+    margin: 0 50px;
+    margin-bottom: 150px;
 }
-
 
 #sec_web #slide2 .bg_mac {
-    background-image: url(../image/Ahn_pc.png);
+    background-image: url(../image/Ahn.png);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 100%;
-    height: 650px;
+    width: 90%;
+    height: 500px;
     position: relative;
 }
-
-#sec_web #slide2 .bg_tablet {
-    background-image: url(../image/Ahn_ipad.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    max-width: 350px;
-    max-height: 350px;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 0;
-    bottom: 9%;
-    left: 18.5%;
-    animation: tablet 1s ease-in-out forwards;
-}
-
-#sec_web #slide2 .bg_mobile {
-    background-image: url(../image/Ahn_iphone.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    max-width: 350px;
-    max-height: 350px;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 34%;
-    left: -12%;
-    animation: mobile 1s ease-in-out forwards;
-}
-
 /* #slide2 안국약품 이미지 끝 */
 
 #sec_web #slide4 .bg_mac {
-    background-image: url(../image/Natour_pc.png);
+    background-image: url(../image/Natour_pic.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 100%;
-    height: 650px;
+    height: 500px;
     position: relative;
 }
-
-#sec_web #slide4 .bg_tablet {
-    background-image: url(../image/Natour_ipad.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    max-width: 350px;
-    max-height: 350px;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 0;
-    bottom: 9%;
-    left: 18.5%;
-    animation: tablet 1s ease-in-out forwards;
-}
-
-#sec_web #slide4 .bg_mobile {
-    background-image: url(../image/Natour_iphone.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    max-width: 350px;
-    max-height: 350px;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 34%;
-    left: -12%;
-    animation: mobile 1s ease-in-out forwards;
-}
-
 /* slide4 나투어 이미지 끝 */
+
 #sec_web #slide5 .bg_mac {
-    background-image: url(../image/Hanyang_pc.png);
+    background-image: url(../image/Han_pic.png);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: top center;
     width: 100%;
-    height: 650px;
+    height: 500px;
     position: relative;
 }
-
 /* slide5 한양 수자인 이미지 끝 */
+
 #sec_web #slide6 .bg_mac {
-    background-image: url(../image/LGU+pc.png);
+    background-image: url(../image/LGU+.png);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: top center;
     width: 100%;
-    height: 650px;
+    height: 500px;
     position: relative;
 }
 
 /* slide6 LG U+ 이미지 끝 */
-
-#sec_web .text_box {
-    width: 43%;
-}
 
 #sec_web .text_box h4 {
     position: relative;
@@ -928,8 +963,8 @@ body #background_wrap.active{
 
 #sec_web .text_box h4::before {
     position: absolute;
-    top: -80%;
-    right: 43%;
+    top: -50%;
+    right: 20%;
     z-index: -1;
     font-size: 16rem;
     color: #dee2e6;
@@ -951,16 +986,8 @@ body #background_wrap.active{
     z-index: 0;
 }
 
-#sec_web #slide1 .text_box h4::before {
-    content: '1';
-}
-
 #sec_web #slide2 .text_box h4::before {
     content: '1';
-}
-
-#sec_web #slide3 .text_box h4::before {
-    content: '3';
 }
 
 #sec_web #slide4 .text_box h4::before {
@@ -981,12 +1008,15 @@ body #background_wrap.active{
 
 #sec_web .explain {
     margin-bottom: 30px;
+    font-size: 1rem;
 }
 
+#sec_web .text_box {
+    width: 35%;
+}
 #sec_web .text_box .skill.flex {
     margin-bottom: 45px;
 }
-
 #sec_web .text_box .info.flex,
 #sec_web .text_box .skill.flex {
     justify-content: flex-start;
@@ -995,7 +1025,7 @@ body #background_wrap.active{
 #sec_web .text_box .info.flex p,
 #sec_web .text_box .skill.flex p {
     margin-right: 15px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #sec_web .text_box .btn_box.flex {
