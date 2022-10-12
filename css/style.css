@@ -499,15 +499,25 @@ body #background_wrap.active {
     margin: 0 auto;
 }
 
-#sec_intro p {
+#sec_intro .textBox p {
     text-align: center;
     font-size: 26px;
     font-weight: 300;
 }
-
-#sec_intro p strong {
+#sec_intro .textBox p strong {
     text-align: center;
     font-size: 30px;
+}
+
+#sec_intro .textBox p:nth-of-type(2) {
+    background-color: #000;
+    color: #f2f2f2;
+    border-radius: 20px;
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px 0;
+    font-size: 14px;
 }
 
 #sec_intro .skill_container .flex:first-child li {
@@ -1361,10 +1371,19 @@ body #background_wrap.active {
 /* ------------------------------------#footer 시작 */
 #footer_container {
     background-color: #dee2e6;
-    padding-bottom: 100px;
 }
 
-#footer_container p {
+#footer_container .inner > p {
     text-align: center;
     font-size: 28px;
+    margin-bottom: 50px
+}
+
+#footer_container .flex {
+    justify-content: center;
+}
+
+#footer_container .flex p:nth-child(2) {
+    margin-left: 50px;
+    margin-bottom: 100px;
 }
