@@ -6,8 +6,8 @@ $(function () {
     dots: true,
     prevArrow: "<button type='button' class='slick-prev'>Previous</button>",
     nextArrow: "<button type='button' class='slick-next'>Next</button>",
-    autoplaySpeed: 4000,
-    // autoplay:true,
+    autoplaySpeed: 1000,
+    autoplay:true,
     draggable: true, //드래그 가능 여부
   });
 });

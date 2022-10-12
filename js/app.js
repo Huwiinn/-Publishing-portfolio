@@ -49,6 +49,12 @@ $(function () {
       function(){ $('#sidmool').removeClass('on') }
       )
 
+    //#project .flex .card_wrap:nth-child(3):hover되면, #sidmool에 .on 붙히기
+    $('#project .flex .card_wrap:nth-child(3)').hover(
+      function(){ $('#fromtome').addClass('on') },
+      function(){ $('#fromtome').removeClass('on') }
+      )
+
   //offset이 #sec_web에 들어오면, 키프레임 애니메이션 실행시키기
 
   // 스크롤 시, 특정 px 밑까지 오면 이미지 변경되게.
