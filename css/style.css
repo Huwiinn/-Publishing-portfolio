@@ -1421,7 +1421,6 @@ body #background_wrap.active {
 
 #sec_banner .flex .top img {
     width: 48%;
-    /* max-width: 475px; */
     max-height: 1080px;
     display: inline-block;
 }

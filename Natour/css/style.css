@@ -1,0 +1,625 @@
+body {
+    word-break: keep-all;
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+body {}
+
+h2 {
+    width: 100%;
+    font-size: 2rem;
+    /* 배경으로 사진 넣을 때는 백그라운드 속성으로 넣기━*/
+    line-height: 1em;
+    margin-bottom: 20px;
+}
+
+#wrap {
+    position: relative;
+}
+
+#header {
+    position: relative;
+}
+
+/* .top_btn 기준 */
+
+#section {}
+
+#footer {}
+
+/*********************header****************************/
+.logo {
+    font-family: 'yg-jalnan';
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    padding: 50px 0;
+    font-size: 2rem;
+}
+
+.top_btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: none;
+}
+
+/* 모바일에서 10px 여백도 크게 나온다. */
+/* absolute에 부모 말고 조상을 잡아서 위치 지정을 해도 괜찮음. */
+/* transform : translate() 내 기준으로 y좌표로 -50% 이동. */
+
+.top_btn button {
+    border: none;
+    background: none;
+    font-size: 2rem;
+}
+
+#nav {
+    margin-bottom: 20px;
+}
+
+#nav .flex {
+    justify-content: center;
+    /* justify-content: space-between; */
+}
+
+#nav .gnb li {
+    margin: 0 25px;
+    position: relative;
+}
+
+#nav .gnb>li a {
+    display: block;
+    padding: 10px 0;
+}
+
+#nav .gnb .dpeth2 li {
+    line-height: 1.5;
+}
+
+#nav .gnb .dpeth2 {
+    position: absolute;
+    z-index: 9999;
+    background-color: #fff;
+    top: 30px;
+    width: 120px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    height: 0;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+#nav .gnb>li:hover .dpeth2 {
+    height: 220px;
+    padding-top: 29px;
+}
+
+/* padding은 hidden해놓은 속성에서도 적용하면 공간 차지한다.
+ 그래서 마우스 hover 했을 때만 패딩이 적용되게 여기에 코드 작성해놓음. */
+
+/*********************section****************************/
+section {
+    margin-bottom: 100px;
+}
+
+#slide {
+    /* min-width: 1200px; */
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#slide>div img {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#slide .inner {
+    position: relative;
+}
+
+#slide>div .slide_txt {
+    position: absolute;
+    right: 0px;
+    bottom: 700px;
+    color: #0ff;
+    font-size: 5rem;
+    line-height: 1em;
+}
+
+#section1 .flex {
+    justify-content: space-between;
+}
+
+#section1 .main_img,
+#section1 .list_img {
+    width: calc((100% - 50px)/2);
+    box-sizing: border-box;
+}
+
+#section1 .main_img {
+    border: 1px solid #eee
+}
+
+#section1 .main_img .img_box {
+    overflow: hidden;
+}
+
+#section1 .main_img img {
+    width: 100%;
+    transition-duration: 0.3s;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#section1 .main_img:hover img {
+    transform: scale(1.2);
+}
+
+/* #section1 h2 {
+    margin: 20px 0;
+    font-size: 1.125rem;
+} */
+
+#section1 .list_img li {
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    height: 25%
+}
+
+#section1 a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+}
+
+#section1 .main_img>div>a .subj {
+    padding-top: 30px;
+    line-height: 1.5;
+}
+
+#section1 .main_img>div>a .no {
+    font-size: 2rem;
+    line-height: 45px;
+    padding: 30px;
+}
+
+#section1 .list_img li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#section1 .list_img a .no {
+    font-size: 2rem;
+    line-height: 45px;
+    padding: 30px;
+}
+
+#section1 .list_img a .subj {
+    line-height: 1.8;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+#section1 .prod_img {}
+
+#section1 .subj {}
+
+#section1 .subj span {
+    font-size: 0.8rem;
+    display: block;
+}
+
+#section1 .pay {
+    font-size: 0.8rem;
+    color: #6eb8c3;
+    font-weight: bold;
+}
+
+#section1 .main_img .pay {
+    position: absolute;
+    right: 20px;
+    bottom: 35px;
+}
+
+#section1 .list_img a {
+    width: 100%;
+}
+
+#section1 .list_img .pay {
+    position: absolute;
+    bottom: 18px;
+    right: 10px;
+}
+
+#section2 .inner {}
+
+#section2 .inner img {
+    width: 100%;
+}
+
+#section3 .inner {
+    justify-content: space-between;
+    /* background-color: #0ff; */
+}
+
+#section3 .sec3_img_box .sec3_img_box_txt {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#section3 .sec3_img_box h3 {
+    font-size: 1.25rem;
+}
+
+#section3 .sec3_img_box img {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#section3 .sec3_img_box {
+    border: 2px solid #eee;
+    margin-bottom: 50px;
+    /* width: calc((100% - 10px) / 3); */
+    overflow: hidden;
+}
+
+#section3 .sec3_img_box p {
+    font-size: 0.825rem;
+}
+
+#section3 .sec3_img_box_txt>p {
+    padding-top: 10px;
+    color: #515151;
+    line-height: 1.3;
+    /* border-bottom: 1px solid #eee; */
+}
+
+#section3 .sec3_img_box_txt .flex {
+    margin: 20px 0;
+    justify-content: space-between;
+}
+
+#section3 .sec3_img_box_txt .flex p {
+    font-size: 1rem;
+    padding-right: 20px;
+}
+
+#section3 .pay {
+    font-size: 0.8rem;
+    color: #6eb8c3;
+    font-weight: bold;
+}
+
+#section3 .more_view {
+    /* background-color: salmon; */
+    text-align: center;
+    color: #6eb8c3;
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 20px 0;
+    border: 1px solid #eee;
+}
+
+#section3 .more_view::after {
+    content: "\2b";
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#section4 {
+    border: 2px solid #eee;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 0;
+}
+
+#section4 .inner {
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    background-color: #fff;
+}
+
+#section4 .tel p {
+    line-height: 1.3;
+}
+
+#section4 .tel p:nth-child(1) {
+    font-size: 0.725rem;
+}
+
+#section4 .tel p:nth-child(2) {
+    font-size: 1.85rem;
+    font-weight: bold;
+}
+
+#section4 .tel p:nth-child(3) {
+    font-size: 0.825rem;
+}
+
+#section4 .group_tour {
+    line-height: 2;
+    font-size: 0.825rem;
+    /* width: calc((100% - 600px)); */
+    /* 양쪽 요소에 width 지정해준 후, 남은 여백 차지하도록 지정. >> 글자 크기만 줄어듦. */
+}
+
+#section4 .group_tour h2 {
+    letter-spacing: 0.1rem;
+}
+
+#section4 .kakao_cs p {
+    font-size: 0.825rem;
+}
+
+#section4 .kakao_cs img {
+    width: 300px;
+    height: 50px;
+}
+
+#section4 .kakao_cs {
+    width: 300px;
+}
+
+
+/*********************footer****************************/
+
+#footer {
+    background-color: #f1f5f8;
+}
+
+#footer .inner {
+    padding: 50px 0;
+}
+
+#footer .flex {
+    justify-content: center;
+}
+
+#footer .flex li {
+    margin: 0 15px;
+    font-size: 0.825rem;
+    padding-bottom: 40px;
+}
+
+#footer .flex li:nth-child(5) a {
+    font-weight: bold;
+}
+
+#footer .info {
+    margin: 0 auto;
+    text-align: center;
+    /* background-color: antiquewhite; */
+    color: #aaa;
+    font-size: 0.825rem;
+    line-height: 1.4;
+}
+
+#footer .info p {
+    display: inline-block;
+}
+
+/* #footer .info p:nth-child(1) {
+    border-right: 1px solid #aaa;
+    padding-right: 5px;
+} */
+
+
+#footer .info p:nth-child(1) {
+    position: relative;
+    padding-right: 5px;
+}
+
+#footer .info p:nth-child(1)::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 70%;
+    background-color: #aaa;
+    position: absolute;
+    top: 20%;
+    right: 0px;
+}
+
+/* 
+#footer .info p:nth-child(4) {
+    position: relative;
+    padding-right: 5px;
+}
+
+#footer .info p:nth-child(4)::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height:70%;
+    background-color: #aaa;
+    position: absolute;
+    top: 0;
+    right: 0;
+} */
+
+#footer .info p span {
+    position: relative;
+    padding-right: 5px;
+}
+
+#footer .info p span::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 70%;
+    background-color: #aaa;
+    position: absolute;
+    top: 18%;
+    right: 0;
+}
+
+/* span사용해서 가상선택자 테두리 넣기. */
+
+.top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    color: #fff;
+    text-align: center;
+    font-size: 0
+}
+
+@media all and (max-width:1130px) {
+    #section3 .sec3_img_box {
+        width: calc((100% - 10px) / 3);
+    }
+    #slide>div .slide_txt {
+        right: 10px;
+    }
+}
+
+/* 1130px */
+
+@media all and (max-width:1024px) {
+    #slide>div .slide_txt {
+        /* position: absolute;
+        right: 0px;
+        bottom: 700px;
+        color: #0ff; */
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+
+    #slide img {
+        height: 100vh;
+        /* width: 100%; */
+    }
+
+    #section4 .tel,
+    #section4 .kakao_cs {
+        margin: 0 10px;
+    }
+
+    #section4 .group_tour {
+        width: calc((100% - 600px) - 25px);
+    }
+
+    #section4 .group_tour h2 {
+        letter-spacing: -0.01rem;
+        font-size: 1.75rem;
+    }
+} /* 1024 태블릿 */
+
+@media all and (max-width:768px) {
+    section {
+        margin-bottom: 50px;
+    }
+
+    h2 {
+        padding-left: 10px;
+    }
+
+    #header .top_btn {
+        /* position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translate(0, -50%); */
+        display: block;
+        right: 20px;
+    }
+
+    #nav {
+        margin-bottom: 0;
+    }
+    #nav .flex {
+        display: none;
+    }
+
+    #slide .inner {
+        position: static;
+    }
+    #slide img {
+        height: 90vh;
+    }
+    #slide>div .slide_txt {
+        position: absolute;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        right: auto;
+        left: 10px;
+        top: 250px;
+    }
+    #slide>div .slide_txt p span {
+        display: block;
+    }
+
+    #section1 .main_img,
+    #section1 .list_img {
+        width: 100%;
+    }
+    #section1 .list_img li {
+        padding: 10px 0;
+    }
+    #section1 .list_img a .subj {
+        font-size: 0.825rem;
+        font-weight: bold;
+    }
+    #section1 .list_img a .subj span {
+        font-weight: normal;
+    }
+    #section1 .list_img .pay {
+        right: 20px;
+        bottom: 30px;
+    }
+
+    #section2 .inner img {
+        /* width: 100%; */
+        height: 20%;
+    }
+
+    #section3 {
+        padding-bottom: 60px;
+    }
+    #section3 .sec3_img_box {
+        width: 100%;
+    }
+    #section3 .sec3_img_box img {
+        width: 100%;
+    }
+    #section3 .more_view {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+
+    #section4 .group_tour,
+    #section4 .tel,
+    #section4 .kakao_cs {
+        width: 100%;
+        text-align: center;
+    }
+    #section4 .group_tour {
+        margin: 10px 0;
+    }
+    #section4 .group_tour h2 {
+        font-size: 1.35rem;
+    }
+    #section4 .kakao_cs p {
+        padding-bottom: 5px;
+    }
+}  /* 768 모바일 */

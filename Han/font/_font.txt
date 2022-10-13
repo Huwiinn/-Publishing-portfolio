@@ -1,0 +1,9 @@
+/* NotoSans */
+@font-face { font-family: 'NotoSans'; font-style: normal; font-weight: 400; src: url("/fonts/NotoSansCJKkr-Regular.eot"); src: url("/fonts/NotoSansCJKkr-Regular.eot"); src: url("/fonts/NotoSansCJKkr-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/NotoSansCJKkr-Regular.woff2") format("woff2"), url("/fonts/NotoSansCJKkr-Regular.woff") format("woff"); }
+
+@font-face { font-family: 'NotoSans'; font-style: normal; font-weight: 600; src: url("/fonts/NotoSansCJKkr-Bold.eot"); src: url("/fonts/NotoSansCJKkr-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/NotoSansCJKkr-Bold.woff2") format("woff2"), url("/fonts/NotoSansCJKkr-Bold.woff") format("woff"); }
+
+/* Arsenal */
+@font-face { font-family: 'Arsenal'; font-style: normal; font-weight: 400; src: url("/fonts/Arsenal-Regular.eot"); src: url("/fonts/Arsenal-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/Arsenal-Regular.woff2") format("woff2"), url("/fonts/Arsenal-Regular.woff") format("woff"); }
+
+@font-face { font-family: 'Arsenal'; font-style: normal; font-weight: 600; src: url("/fonts/Arsenal-Bold.eot"); src: url("/fonts/Arsenal-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/Arsenal-Bold.woff2") format("woff2"), url("/fonts/Arsenal-Bold.woff") format("woff"); }

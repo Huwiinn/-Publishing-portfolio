@@ -1,0 +1,412 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <!--과거 엣지에서 css 적용 논란때문에 크로스브라우징 지원차 넣는 메타태그임.-->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.5, user-scalable=no" />
+  <!-- 해상도 문제 해결차 메타태그.
+해상도가 같다 = 1인치에 찍히는 점의 개수가 같다는 말임.
+해상도 : 1인치에 점이 몇 개 찍혀있는지.
+1인치당 찍히는 간격이 넓어져서 커져보이는 느낌을 가져온다.
+해상도가 낮으면 1인치에 찍히는 점의 간격이 넓어지므로 사진의 해상도가 낮아지면 커져보이기 때문에 부분만 보일 수 있다.
+경계부분 처리, 밀도의 관점
+
+1. 디바이스 크기는 일정하고 해상도가 다른경우
+- 큰 해상도일수록 더욱 크게 보인다. 작은 해상도일 때 더 작게보인다.
+>> 800 x 600보다 1920 x 1020이 더 크게보인다는 말. (그림의 크기가 달라보임)
+
+***2. 해상도는 같은데, 디바이스가 크기가 다른 경우
+- 그림은 크게 만들고, 반응형으로 그림을 잘 보이게 맞추는 것이 중요함.
+- 이 경우, 낮은 해상도의 기기에서는 크게 보인다.
+>> 800 x 600보다 1920 x 1020의 픽셀 그리드 밀도가 더 높으므로, 전자보다 후자에 더 적은 공간에 세밀하게 픽셀이 들어가기 때문에 해상도가 높을수록 작게보임.
+
+
+<반응형에 꼭 필요한 메타태그 요소들>
+viewport : 모바일에서 해상도를 통일되게 하도록 하는 메타태그.
+내 홈페이지가 브라우저로 실행될 때, 
+
+content="width=device-width : 디바이스의 가로 크기애 맞춰라.
+initial-scale=1.0 : 페이지가 보이는 기본 비율. 가로 사이즈 320픽셀. (최초 스마트폰의 가로 크기)
+maximum-scale=1.0 : 최대 확대 크기
+minimum-scale=1.0 : 최대 축소 크기
+user-scalable=no : 사용자가 크기를 조정하는 것에 있어서 가능 / 불가능(yes/no). 데스크탑은 상관 없으나, 모바일 기기에서 필수적인 기능임.
+-->
+
+  <!-- meta태그는 웹사이트의 환경에 관한 전반적인 모든 것들을 정의하고 적용. -->
+
+  <title>박휘인 - LG U+ 퍼블리싱</title>
+  <!--[if lt IE 9]>
+      <script src="js/html5.js"></script>
+   <![endif]-->
+  <link href="css/common.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="header_gnb_wrap">
+    <header id="header">
+      <div class="inner">
+        <h1 class='logo'>
+          <a href="#"><img src="./images/logo.png" alt="엘지로고"></a>
+        </h1>
+        <p class="top_btn">
+          <a href="#">개인</a> <!-- 하위 메뉴 없고 단어만 들어갈 때는 리스트 안 쓰고 p나 div로 영역 지정해서 a링크버튼 만들어줘도 된다.-->
+          <a href="#">기업</a> <!-- 하위 메뉴 없고 단어만 들어갈 때는 리스트 안 쓰고 p나 div로 영역 지정해서 a링크버튼 만들어줘도 된다.-->
+          <a href="#">소상공인</a> <!-- 하위 메뉴 없고 단어만 들어갈 때는 리스트 안 쓰고 p나 div로 영역 지정해서 a링크버튼 만들어줘도 된다.-->
+        </p>
+      </div>
+    </header>
+
+    <!-- 클릭하면 닫히고 열리는 기능은 버튼 태그 사용. 다른 페이지로 이동한다 > a태그로 버튼 만들기 -->
+
+    <nav id="nav">
+      <div class="inner">
+        <!-- depth 1 시작 -->
+        <ul class="gnb">
+          <li>
+            <a href="#">기업정보</a>
+            <!-- depth 2 시작-->
+            <div class="depth2_back">
+              <ul class="depth2 inner">
+                <li><a href="#">기업소개</a></li>
+                <li><a href="#">CEO메세지</a></li>
+                <li><a href="#">연혁</a></li>
+                <li><a href="#">경영철학</a>
+                  <!-- depth 3-->
+                  <ul class="depth3">
+                    <li><a href="#">LG way</a></li>
+                    <li><a href="#">경영이념</a></li>
+                    <li><a href="#">정도경영</a></li>
+                  </ul><!-- depth 3 -->
+                </li>
+                <li><a href="#">홍보자료</a>
+                  <ul class="depth3">
+                    <li><a href="#">보도자료</a></li>
+                    <li><a href="#">따뜻한 이웃사랑</a></li>
+                    <li><a href="#">광고영상</a></li>
+                    <li><a href="#">공지사항</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">오시는길</a></li>
+              </ul><!-- depth 2-->
+            </div>
+          </li>
+          <li>
+            <a href="#">지속가능경영</a>
+            <!-- depth 2 시작-->
+            <div class="depth2_back">
+              <ul class="depth2 inner">
+                <li><a href="#">LG유플러스의 지속가능경영</a></li>
+                <li><a href="#">지속가능경영활동</a>
+                  <ul class="depth3">
+                    <li><a href="#">정도경영</a></li>
+                    <li><a href="#">고객만족경영</a></li>
+                    <li><a href="#">정보보호</a></li>
+                    <li><a href="#">공정거래</a></li>
+                    <li><a href="#">환경경영</a></li>
+                    <li><a href="#">임직원</a></li>
+                    <li><a href="#">지역사회</a></li>
+                    <li><a href="#">인권경영</a></li>
+                    <li><a href="#">안전보건</a></li>
+                    <li><a href="#">자율준수프로그램</a></li>
+                  </ul><!-- depth 3-->
+                </li>
+                <li><a href="#">지속가능경영보고서</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">사업소개</a>
+            <!-- depth 2 시작-->
+            <div class="depth2_back">
+              <ul class="depth2 inner">
+                <li><a href="#">모바일</a></li>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">기업</a></li>
+              </ul><!-- depth 2-->
+            </div>
+          </li>
+          <li>
+            <a href="#">투자정보</a>
+            <!-- depth 2 시작-->
+            <div class="depth2_back">
+              <ul class="depth2 inner">
+                <li><a href="#">경영정보</a>
+                  <ul class="depth3">
+                    <li><a href="#">투자현황</a></li>
+                    <li><a href="#">대주주현황</a></li>
+                    <li><a href="#">기업지배구조</a></li>
+                    <li><a href="#">주주총회</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">공시정보</a></li>
+                <li><a href="#">주가정보</a>
+                  <ul class="depth3">
+                    <li><a href="#">현재주가</a></li>
+                    <li><a href="#">시간별 호가</a></li>
+                    <li><a href="#">일자별 주가</a></li>
+                    <li><a href="#">차트분석</a></li>
+                    <li><a href="#">외국인 지분율</a></li>
+                    <li><a href="#">배당정보</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">재무정보</a>
+                  <ul class="depth3">
+                    <li><a href="#">주요재무제표</a></li>
+                    <li><a href="#">재무상태표</a></li>
+                    <li><a href="#">손익계산서</a></li>
+                    <li><a href="#">감사보고서</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">IR자료실</a>
+                  <ul class="depth3">
+                    <li><a href="#">IR소식</a></li>
+                    <li><a href="#">IR데이터</a></li>
+                    <li><a href="#">실적자료</a></li>
+                    <li><a href="#">IR Contact</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">전자공고</a></li>
+              </ul><!-- depth 2-->
+            </div>
+          </li>
+          <li>
+            <a href="#">인재채용</a>
+            <!-- depth 2 시작-->
+            <div class="depth2_back">
+              <ul class="depth2 inner">
+                <li><a href="#">인사제도</a></li>
+                <li><a href="#">즐거운 직장</a></li>
+                <li><a href="#">지원하기</a></li>
+            </div>
+          </li>
+        </ul>
+        <!--gnb = depth1 -->
+        <p class="nav_btn">
+          <a href="#">ENG</a>
+          <button>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </p>
+      </div>
+    </nav>
+  </div>
+  <section id="slide1">
+    <div>
+      <img src="./images/slide1.png" alt="일상을 즐겁게 바꿉니다 - 그림">
+      <p class="slide_txt">일상을 <span class="pink_text">즐겁게</span> 바꿉니다</p>
+    </div>
+  </section>
+
+  <section id="slide2">
+    <div class="slide_cont1">
+      <div class="inner">
+        <div class="slide_left">
+          <h3>새로운 소식</h3>
+          <p class="big_title">U+모바일tv, 2022 지방선거<br> 맞춤 콘텐츠 제공</p>
+          <a href="#">자세히보기</a>
+        </div>
+        <!--slide left-->
+        <div class="slide_right">
+          <p class="right_title"><strong>U+모바일tv, 2022 지방선거 맞춤 콘텐츠 제공</strong></p>
+          <div class="slide_right_text">
+            <p>█ LG헬로비전이 제작한 지역 밀착 선거 콘텐츠 모바일로 중계…고객 경험 혁신 일환</p>
+            <p>█ 지역별 선거 개표 방송도 실시간으로 송출…”지역 기반 콘텐츠 협업 지속할 것”</p>
+          </div>
+          <div class="slide_right_text2">
+            <p>LG유플러스(대표 황현식/www.uplus.co.kr)는 6월 1일 전국 지방선거를 앞두고 모바일 영상 플랫폼인 U+모바일tv를 통해 지역 밀착형 선거 방송을 중계한다고 26일 밝혔다.
+            </p>
+          </div>
+        </div>
+        <!--slide left-->
+      </div> <!-- inner-->
+    </div> <!-- slide_cont1-->
+  </section>
+  <section id="mobile" class="device">
+    <div class="inner">
+      <h2>모바일</h2>
+      <div class="left_txt">
+        <p class="left_txt_title">LG유플러스와 함께 일상이 달라집니다.</p>
+        <div>LG유플러스는 고객을 먼저 생각하는 마음으로 편리
+          하고 다양한 모바일 서비스를 제공하고 있습니다.<br>
+          고객 맞춤형 요금제와 휴대폰 구매 지원 프로그램,<br>
+          차별화된 서비스로 5G 통신 시장을 선도하는 콘텐츠를 만나볼 수 있습니다.<br>
+          앞으로도 고객을 먼저 생각하는 마음으로 국내외에<br>
+          서 인정받는 모바일 서비스를 만들어 가겠습니다.</div>
+      </div>
+      <!--left_txt-->
+      <div class="right_list">
+        <ul>
+          <li>
+            <p class="right_list_txt">U+ 아이돌Live</p>
+            <img src="./images/img-cop-mobile-1.png" alt="유플러스 아이돌 라이브">
+          </li>
+          <li>
+            <p class="right_list_txt">U+ DIVE</p>
+            <img src="./images/img-cop-mobile-2.png" alt="유플러스 아이돌 라이브">
+          </li>
+          <li>
+            <p class="right_list_txt">U+ 5G 넷플릭스 팩</p>
+            <img src="./images/img-cop-mobile-3.png" alt="유플러스 아이돌 라이브">
+          </li>
+        </ul>
+      </div>
+      <!--right_list-->
+    </div>
+  </section>
+  <section id="home" class="device">
+    <div class="inner">
+      <h2>홈</h2>
+      <div class="left_txt">
+        <p class="left_txt_title">LG유플러스와 함께 생활이<br>즐겁고 편리해집니다.</p>
+        <div>LG유플러스는 집에서 더 편리하고 즐거운 시간을 보낼 수 있도록 다양한 홈 서비스를 제공하고 있습니다.<br>
+          고객만족도 1위 유아 전용 IPTV 서비스<br>
+          ‘U+아이들나라’, 국내 IPTV 최초 ‘넷플릭스’,<br>
+          음성으로 가전을 실행하는 ‘U+스마트홈’ 등을 만나보세요.<br>
+          지속적인 기술 개발을 통해 고객이 만족할 만한 편리한 서비스를 만들어 가겠습니다.</div>
+      </div>
+      <!--left_txt-->
+      <div class="right_list">
+        <ul>
+          <li>
+            <p class="right_list_txt">U+넷플릭스</p>
+            <img src="./images/img-cop-home-4.png" alt="유플러스 아이돌 라이브">
+          </li>
+          <li>
+            <p class="right_list_txt">U+아이들나라</p>
+            <img src="./images/img-cop-home-2.png" alt="유플러스 아이돌 라이브">
+          </li>
+          <li>
+            <p class="right_list_txt">펫케어</p>
+            <img src="./images/img-cop-home-3.png" alt="유플러스 아이돌 라이브">
+          </li>
+        </ul>
+      </div>
+      <!--right_list-->
+    </div>
+  </section>
+  <section id="company" class="device">
+    <div class="inner">
+      <h2>기업</h2>
+      <div class="left_txt">
+        <p class="left_txt_title">LG유플러스만의 기술력은<br>
+          고객의 가치와 경쟁력을<br>
+          높이고 있습니다.</p>
+        <div>LG유플러스는 국내 최초 데이터 통신 사업자라<br>
+          는 자부심으로 기업 부문 5G 서비스를 선도해<br>
+          나갑니다. 고객 감동을 최우선으로 하여 고객의<br>
+          목소리에 귀 기울인 꼭 필요한 서비스를<br> 제공하겠습니다.</div>
+      </div>
+      <!--left_txt-->
+      <div class="right_list">
+        <ul>
+          <li>
+            <p class="right_list_txt">5G 서비스</p>
+            <img src="./images/img-cop-biz-1.png" alt="유플러스 아이돌 라이브">
+          </li>
+          <li>
+            <p class="right_list_txt">통신 인프라</p>
+            <img src="./images/img-cop-biz-2.png" alt="유플러스 아이돌 라이브">
+          </li>
+          <li>
+            <p class="right_list_txt">비즈니스 솔루션</p>
+            <img src="./images/img-cop-biz-3.png" alt="유플러스 아이돌 라이브">
+          </li>
+        </ul>
+      </div>
+      <!--right_list-->
+  </section>
+  <section id="icon_list">
+    <div class="inner">
+      <ul>
+        <li>
+          <a href="#" target="_blank">
+            <img src="./images/ico-go-menu-1.svg" alt="기업정보 아이콘">
+            <h2>기업정보</h2>
+            <span><a href="#">자세히 보기</a></span>
+          </a>
+        </li> <!-- li 안에 a 태그는 인라인 속성이라 같이 적용이 되는건가?-->
+        <li>
+          <a href="#" target="_blank">
+            <img src="./images/ico-go-menu-2.svg" alt="지속가능경영 아이콘">
+            <h2>지속가능경영</h2>
+            <a href="#">자세히 보기</a>
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img src="./images/ico-go-menu-3.svg" alt="투자정보 아이콘">
+            <h2>투자정보</h2>
+            <a href="#">자세히 보기</a>
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <img src="./images/ico-go-menu-4.svg" alt="인재채용 아이콘">
+            <h2>인재채용</h2>
+            <a href="#">자세히 보기</a>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="notice">
+    <div class="inner">
+      <div>
+        <p>공지사항</p>
+        <p><a href="#">2022년 1분기 실적 발표 컨퍼런스 콜을 다음과 같이 시행합니다.</a></p>
+        <div class="notice_btn_wrap">
+          <button><img src="./images/icon-notice-prev.png" alt="왼쪽으로 넘기기"></button>
+          <button><img src="./images/icon-notice-play.png" alt="정지/시작 버튼"></button>
+          <button><img src="./images/icon-notice-prev 복사본.png" alt="오른쪽으로 넘기기"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="inner">
+      <div class="footer_left">
+        <a href="#">오시는 길</a>
+        <a href="#">5G INNOVATION LAB</a>
+        <a href="#">개인정보처리방침</a>
+        <p>㈜엘지유플러스 서울특별시 용산구 한강대로 32 대표이사 황현식 사업자등록번호 220-81-39938 통신판매신고 제 2015-서울용산-00481호 </p>
+        <p>고객센터 휴대폰 114(무료) 1544-0010(유료) 인터넷/IPTV/전화 101(무료) 가입문의 휴대폰 1644-7009(유료) 인터넷/IPTV 1644-7070(유료) 스마트홈 1544-0107(유료) 소상공인 인터넷/IPTV/전화 1800-8000(유료)</p>
+        <p>Copyright ⓒ Park Hwuiinn</p>
+        <ul>
+          <li>
+            <a href="#"><img src="./images/footer-mark-auth-wa.png">과학기술정보통신부 웹접근성 준수</a>
+          </li>
+          <li><a href="#"><img src="./images/footer-mark-auth-sinmungo.png">정도경영 사이버신문고</a>
+          </li>
+          <li><a href="#"><img src="./images/footer-mark-auth-wise.png">방송통신 이용자 정보포털</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer_right">
+        <button>바로가기</button>
+        <div>
+          <a href="#" target="_blank"><img src="./images/footer-sns-facebook.svg" alt="페이스북 바로가기"></a>
+          <a href="#" target="_blank"><img src="./images/footer-sns-youtube.svg" alt="유튜브 바로가기"></a>
+          <a href="#" target="_blank"><img src="./images/footer-sns-twitter.svg" alt="트위터 바로가기"></a>
+          <a href="#" target="_blank"><img src="./images/footer-sns-naverblog.svg" alt="네이버블로그 바로가기"></a>
+          <a href="#" target="_blank"><img src="./images/footer-sns-instagram.svg" alt="인스타그램 바로가기"></a>
+          <a href="#" target="_blank"><img src="./images/footer-sns-kakao.svg" alt="카카오스토리 바로가기"></a>
+          <a href="#" target="_blank"><img src="./images/footer-sns-lgblog.svg" alt="네이버글쓰기 바로가기"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="quick_btn">
+    <button class="main">Quick Menu</button>
+    <button class="top">Top</button>
+  </div>
+  </div>
+</body>
+
+</html>
