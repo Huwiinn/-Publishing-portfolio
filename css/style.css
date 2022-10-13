@@ -348,18 +348,20 @@ body #background_wrap.active {
 
 /* ------------------------------------#sec_introduce 시작 */
 #sec_introduce {
-    background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     top: 0;
     right: -100%;
     z-index: 9999;
     transition-duration: .3s;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    overflow:auto;
+    padding-bottom: 150px;
 }
 
 #sec_introduce.active {
-    /* position: fixed; */
     top: 0;
     right: 0%;
 }
@@ -367,6 +369,78 @@ body #background_wrap.active {
 #sec_introduce h3 {
     color: #f2f2f2;
     text-align: center;
+}
+
+#sec_introduce .flex:nth-of-type(1){
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#sec_introduce .flex:nth-of-type(1) > li {
+    margin: 10px 15px;
+    margin-bottom: 85px;
+
+    padding: 4px 16px;
+    border-radius: 10px;
+    background-color: #f1f3f5;
+    color: #333;
+    box-shadow: 1px 2px 7px #868e96;
+}
+
+#sec_introduce .flex.pic {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-wrap: no-wrap;
+}
+#sec_introduce .flex.pic > li {
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    height: 300px;
+    margin: 10px;
+}
+#sec_introduce .flex.pic > li:nth-of-type(1) {
+    background-image: url(../image/me1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sec_introduce .flex.pic > li:nth-of-type(2) {
+    background-image: url(../image/me2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sec_introduce .flex.pic > li:nth-of-type(3) {
+    background-image: url(../image/me3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sec_introduce .flex.pic > li:nth-of-type(4) {
+    background-image: url(../image/me4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#sec_introduce .resume {
+    text-align: center;
+    margin-top: 90px;
+}
+
+#sec_introduce .resume a {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 25px;
+    font-size: 22px;
+    transition-duration: .3s;
+    border-radius: 10px;
+}
+
+#sec_introduce .resume a:hover{
+    background-color: #29a5d6;
+    color: #fff;
 }
 
 #sec_introduce .X_wrap {
@@ -1136,6 +1210,10 @@ body #background_wrap.active {
     overflow: hidden;
     position: relative;
 }
+/* #sec_web .title .flex .wrap hover 시에 효과 */
+#sec_web .title .flex .wrap:hover {
+    box-shadow: 5px 7px 10px #000;
+}
 
 #sec_web .title .flex .wrap .img_con{
     transition-duration: .5s;
@@ -1187,7 +1265,7 @@ body #background_wrap.active {
 }
 /* #sec_web .title .flex .wrap .text 호버 효과 */
 #sec_web .title .flex .wrap:hover .text {
-    bottom: -25%;
+    bottom: -25%;    
 }
 
 #sec_web .title .flex .wrap .text a {
@@ -1227,8 +1305,6 @@ body #background_wrap.active {
     bottom: 0;
     left: 0;
 }
-
-
 
 #sec_web .text_box h4::before {
     position: absolute;
